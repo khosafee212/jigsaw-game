@@ -1,0 +1,113 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: #009ffb;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.info {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.grid div {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  border: 2px dashed #f30000;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.pieces img {
+  width: 100px;
+  height: 100px;
+  cursor: grab;
+  border-radius: 8px;
+  user-select: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.921);
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff002f;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #00d700;
+  font-weight: bold;
+}
+/* กรอบช่องจิ๊กซอว์ */
+#targetGrid div {
+  width: 100px;
+  height: 100px;
+  border: 0px solid #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;          /* ตัดส่วนที่เกินกรอบ */
+  display: flex;
+  justify-content: center;    /* จัดภาพให้อยู่กลาง */
+  align-items: center;        /* จัดภาพให้อยู่กลาง */
+}
+
+/* รูปภาพในช่อง */
+#targetGrid div img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;          /* ภาพจะเต็มกรอบ ตัดส่วนเกินออก */
+  user-select: none;
+  pointer-events: none;
+}
+#game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px; /* เดิม 40px —> เหลือ 10px */
+  margin-top: 2px;
+}
+.grid, .pieces {
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 60, 255, 0.1);
+}
+/* แก้ตรงนี้ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 3px;
+}
+
+/* ส่วนลากวาง (เปลี่ยนจาก grid → flex เพื่อเรียงเป็นแถว) */
+.pieces {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+  gap: 10px;
+  justify-content: center;
+}
+body.winner {
+  animation: bgFlash 1s infinite alternate;
+   @keyframes bgFlash {
+  0% { background-color: #009ffb; }
+  100% { background-color: #f7e600; 
+}}}

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เกมจิกซอว์</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <h1>🧩 เกมจิกซอว์</h1>
+  <div id="timer" style="font-size: 24px; margin-bottom: 10px;">เวลา: 60 วินาที</div>
+  <div class="info">
+   <span id="score">คะแนน: 0</span>
+  </div>
+<div id="game-area">
+  <div class="grid" id="targetGrid"></div>
+  <div class="pieces" id="piecesArea"></div>
+</div>
+
+  <button onclick="restartGame()">🔁 เริ่มใหม่</button>
+  <button onclick="nextLevel()">➡️ ด่านถัดไป</button>
+  <div id="result"></div>
+
+  <audio id="correct" src="sounds/drop_correct.mp3"></audio>
+  <audio id="wrong" src="sounds/drop_wrong.mp3"></audio>
+  <audio id="bgm" src="sounds/bgm005_ground.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
